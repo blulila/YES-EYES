@@ -34,7 +34,7 @@
                                             <constraint firstAttribute="width" constant="191" id="7TE-hF-jq7"/>
                                             <constraint firstAttribute="height" constant="111" id="tBd-UU-mjn"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -45,7 +45,7 @@
                                     <constraint firstItem="3zy-VX-Ha1" firstAttribute="centerX" secondItem="3x4-bb-Y1o" secondAttribute="centerX" id="Lw3-CH-lu3"/>
                                     <constraint firstItem="3zy-VX-Ha1" firstAttribute="leading" secondItem="3x4-bb-Y1o" secondAttribute="leading" constant="30" id="THR-xX-D2Y"/>
                                     <constraint firstAttribute="width" constant="240" id="id1-ks-k8g"/>
-                                    <constraint firstItem="3zy-VX-Ha1" firstAttribute="centerY" secondItem="3x4-bb-Y1o" secondAttribute="centerY" constant="-82.5" id="urz-pH-cH5"/>
+                                    <constraint firstItem="3zy-VX-Ha1" firstAttribute="centerY" relation="greaterThanOrEqual" secondItem="3x4-bb-Y1o" secondAttribute="centerY" constant="-82.5" id="urz-pH-cH5"/>
                                     <constraint firstAttribute="height" constant="250" id="xwO-su-pBI"/>
                                 </constraints>
                             </view>
