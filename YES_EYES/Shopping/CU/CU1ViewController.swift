@@ -97,6 +97,8 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.present(popUp, animated: true, completion: nil)
     }
     
+    
+    @IBOutlet weak var CU1SearchBar: UISearchBar!
     @IBOutlet weak var CU1TableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -168,3 +170,26 @@ for i in range() {
 */
 
 //}
+
+extension ViewController: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let hasText = searchBar.text else{
+            return
+        }
+        title = hasText
+        let ref = Database.database().reference()
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                    let values = snapshot.value
+                    let dic = values as! [String: [String:Any]]
+//                    for index in dic{
+//                       if (index.value["name"] as! String == hasText){
+//                        print(index.key)
+//                        print(index.value["name"])
+//                        print(index.value["price"])
+//                        }
+//                    }
+                })
+        self.view.endEditing(true)//keyboard
+//        term = searchBar.text ?? ""
+    }
+}

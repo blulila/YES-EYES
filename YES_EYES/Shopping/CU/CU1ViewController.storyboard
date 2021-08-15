@@ -65,6 +65,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="jeO-gJ-3Vn"/>
                     <connections>
+                        <outlet property="CU1SearchBar" destination="Fqw-jj-c2w" id="oZW-b6-daE"/>
                         <outlet property="CU1TableView" destination="hD1-Cf-k04" id="njN-Kr-EHD"/>
                     </connections>
                 </viewController>
