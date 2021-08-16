@@ -28,7 +28,7 @@
                                             <action selector="close:" destination="jni-hP-GRF" eventType="touchUpInside" id="2Np-b7-3Fx"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zy-VX-Ha1">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zy-VX-Ha1">
                                         <rect key="frame" x="30" y="30" width="191" height="111"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="191" id="7TE-hF-jq7"/>

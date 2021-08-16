@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -28,26 +28,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bn1-DD-slw">
-                        <rect key="frame" x="18" y="5" width="387" height="44"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="387" id="aKf-vM-5yw"/>
-                            <constraint firstAttribute="height" constant="44" id="mGp-2u-D35"/>
-                        </constraints>
-                        <connections>
-                            <action selector="pop:" destination="-1" eventType="touchUpInside" id="GLv-hZ-4Ch"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="15t-Cp-iug" firstAttribute="leading" secondItem="wku-4L-HMw" secondAttribute="leading" constant="20" id="135-fC-GuX"/>
-                    <constraint firstAttribute="bottom" secondItem="bn1-DD-slw" secondAttribute="bottom" id="1BB-h8-pmr"/>
                     <constraint firstAttribute="trailing" secondItem="9h6-1c-t59" secondAttribute="trailing" constant="20" id="Eqm-Kr-kXD"/>
-                    <constraint firstAttribute="trailing" secondItem="bn1-DD-slw" secondAttribute="trailing" constant="9" id="Ftv-6m-CDL"/>
                     <constraint firstItem="9h6-1c-t59" firstAttribute="centerY" secondItem="wku-4L-HMw" secondAttribute="centerY" id="Qkm-0v-Ueb"/>
                     <constraint firstItem="15t-Cp-iug" firstAttribute="centerY" secondItem="wku-4L-HMw" secondAttribute="centerY" id="RdG-7l-rCw"/>
-                    <constraint firstItem="bn1-DD-slw" firstAttribute="leading" secondItem="wku-4L-HMw" secondAttribute="leading" constant="18" id="Rye-1b-cq4"/>
-                    <constraint firstItem="bn1-DD-slw" firstAttribute="top" secondItem="wku-4L-HMw" secondAttribute="top" constant="5" id="TQI-un-YL3"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

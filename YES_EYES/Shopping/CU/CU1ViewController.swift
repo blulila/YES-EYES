@@ -14,8 +14,6 @@ class CU1Cell : UITableViewCell{
 }
 
 struct CU1Model{
-//    var mainTitle = ""
-    // 상품 데이터
     var title = ""
     var price = ""
     var info = ""
@@ -24,7 +22,7 @@ struct CU1Model{
 class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var text: String = ""
     var product:Dictionary<String, String> = [String: String]()
-
+//    var term = ""
     //Popup
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -96,16 +94,16 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         self.present(popUp, animated: true, completion: nil)
     }
-    
-    
+
     @IBOutlet weak var CU1SearchBar: UISearchBar!
+    
     @IBOutlet weak var CU1TableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         CU1TableView.delegate = self
         CU1TableView.dataSource = self
-        
+        CU1SearchBar.delegate = self
         CU1TableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell") // ItemCell xib 등록
         
         self.title = "CU"
@@ -171,25 +169,29 @@ for i in range() {
 
 //}
 
-extension ViewController: UISearchBarDelegate{
+extension CU1ViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let hasText = searchBar.text else{
-            return
+        guard let title: String = searchBar.text else { return }
+        print(title)
+
+        let databaseRef = Database.database().reference().child("cu")
+        let query = databaseRef.queryOrdered(byChild: "title").queryStarting(atValue: title).queryEnding(atValue: "\(String(describing: title))\\uf8ff")
+
+        query.observeSingleEvent(of: .value) { (snapshot) in
+            guard snapshot.exists() != false else {
+                print("failing here")
+                return }
+            print(snapshot.value as Any)
+            DispatchQueue.main.async {
+
+                guard let dict = snapshot.value as? [String:Any] else {
+                    print(snapshot)
+                    return
+                }
+
+                let title = dict["title"] as? String
+                let price = dict["price"] as? String
+            }
         }
-        title = hasText
-        let ref = Database.database().reference()
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                    let values = snapshot.value
-                    let dic = values as! [String: [String:Any]]
-//                    for index in dic{
-//                       if (index.value["name"] as! String == hasText){
-//                        print(index.key)
-//                        print(index.value["name"])
-//                        print(index.value["price"])
-//                        }
-//                    }
-                })
-        self.view.endEditing(true)//keyboard
-//        term = searchBar.text ?? ""
     }
 }

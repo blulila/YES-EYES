@@ -40,6 +40,7 @@
 		F526784E26AC3FAD005152C4 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526784C26AC3FAD005152C4 /* MenuCell.swift */; };
 		F526784F26AC3FAD005152C4 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F526784D26AC3FAD005152C4 /* MenuCell.xib */; };
 		F526785126AC43AD005152C4 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526785026AC43AD005152C4 /* SettingModel.swift */; };
+		F570170626C961C800E1CC42 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F570170526C961C800E1CC42 /* NetworkLayer.swift */; };
 		F5B6687A26AF2DE3008AE203 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6687926AF2DE3008AE203 /* StoreViewController.swift */; };
 		F5B6687C26AF2DF4008AE203 /* StoreViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5B6687B26AF2DF4008AE203 /* StoreViewController.storyboard */; };
 		F5B6687E26AF3759008AE203 /* AIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6687D26AF3759008AE203 /* AIViewController.swift */; };
@@ -112,6 +113,7 @@
 		F526784C26AC3FAD005152C4 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		F526784D26AC3FAD005152C4 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		F526785026AC43AD005152C4 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		F570170526C961C800E1CC42 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		F5B6687926AF2DE3008AE203 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		F5B6687B26AF2DF4008AE203 /* StoreViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreViewController.storyboard; sourceTree = "<group>"; };
 		F5B6687D26AF3759008AE203 /* AIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				F5E2AF4B26BB0F8D00C9D815 /* CUSearchViewController.swift */,
 				F51B8CB326B310D6005A13CF /* CU1ViewController.storyboard */,
 				F51B8CB126B310C8005A13CF /* CU1ViewController.swift */,
+				F570170526C961C800E1CC42 /* NetworkLayer.swift */,
 				739D9CEC26B7EEEA0076D382 /* ItemCell.xib */,
 				739D9CEB26B7EEEA0076D382 /* ItemCell.swift */,
 				84FC824C26BD7E6C00DF5A01 /* Popup.storyboard */,
@@ -553,6 +556,7 @@
 			files = (
 				F519FD4726B2F5B700660432 /* CUViewController.swift in Sources */,
 				84FC825F26BD80CB00DF5A01 /* PopupViewController.swift in Sources */,
+				F570170626C961C800E1CC42 /* NetworkLayer.swift in Sources */,
 				F5E2AF4526BB06D700C9D815 /* CUSaleViewController.swift in Sources */,
 				F526785126AC43AD005152C4 /* SettingModel.swift in Sources */,
 				F51B8CB226B310C8005A13CF /* CU1ViewController.swift in Sources */,
