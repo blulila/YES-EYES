@@ -57,11 +57,20 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 //            completion: nil)
 //    }
 //
-    var model = [[CU1Model]]()
+    var model = [CU1Model]()
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    var filtereditem = [CU1Model]()
+    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // section 별 개수 출력
-        return model[section].count
+        if isFiltering() {
+            return filtereditem.count
+        }
+        return model.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -73,10 +82,18 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
         as! ItemCell
         
+        let tmpItem: CU1Model
+        
+        if isFiltering() {
+            tmpItem = filtereditem[indexPath.row]
+        } else {
+            tmpItem = model[indexPath.row]
+        }
+        
         // 상품명과 가격 값을 라벨에 표시
-        cell.Title.text = model[indexPath.section][indexPath.row].title
-        cell.Price.text = model[indexPath.section][indexPath.row].price
-//        tableView.deselectRow(at: indexPath, animated: true)
+        cell.Title.text = tmpItem.title
+        cell.Price.text = tmpItem.price
+//        tableView.deseFlectRow(at: indexPath, animated: true)
         return cell
     }
 
@@ -90,20 +107,38 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         popUp.modalTransitionStyle = .crossDissolve
         
         let temp = popUp as? PopupViewController
-        temp?.strText = model[indexPath.section][indexPath.row].info
+        temp?.strText = model[indexPath.row].info
         
         self.present(popUp, animated: true, completion: nil)
     }
 
-    @IBOutlet weak var CU1SearchBar: UISearchBar!
-    
     @IBOutlet weak var CU1TableView: UITableView!
+    
+    func searchBarIsEmpty() -> Bool {
+      // Returns true if the text is empty or nil
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+      
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+      filtereditem = model.filter({( item : CU1Model ) -> Bool in
+        return item.title.contains(searchText)
+      })
+
+      CU1TableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
         CU1TableView.delegate = self
         CU1TableView.dataSource = self
-        CU1SearchBar.delegate = self
+    
         CU1TableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell") // ItemCell xib 등록
         
         self.title = "CU"
@@ -129,10 +164,10 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 let price = item["price"] ?? ""
                 let info = item["info"] ?? ""
                 
-                self.model.append([CU1Model(title: title as! String, price: price as! String, info: info as! String)])
+                self.model.append(CU1Model(title: title as! String, price: price as! String, info: info as! String))
                 self.product[title as! String] = info as? String
             }
-            
+            print("123123")
             self.CU1TableView.reloadData()
         }
         // 추후 함수 분리할 수 있으니 하단 주석은 남겨 둡니다.
@@ -169,29 +204,36 @@ for i in range() {
 
 //}
 
-extension CU1ViewController: UISearchBarDelegate{
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let title: String = searchBar.text else { return }
-        print(title)
-
-        let databaseRef = Database.database().reference().child("cu")
-        let query = databaseRef.queryOrdered(byChild: "title").queryStarting(atValue: title).queryEnding(atValue: "\(String(describing: title))\\uf8ff")
-
-        query.observeSingleEvent(of: .value) { (snapshot) in
-            guard snapshot.exists() != false else {
-                print("failing here")
-                return }
-            print(snapshot.value as Any)
-            DispatchQueue.main.async {
-
-                guard let dict = snapshot.value as? [String:Any] else {
-                    print(snapshot)
-                    return
-                }
-
-                let title = dict["title"] as? String
-                let price = dict["price"] as? String
-            }
-        }
-    }
+extension CU1ViewController: UISearchResultsUpdating {
+  // MARK: - UISearchResultsUpdating Delegate
+  func updateSearchResults(for searchController: UISearchController) {
+    filterContentForSearchText(searchController.searchBar.text!)
+  }
 }
+
+//extension CU1ViewController: UISearchBarDelegate{
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        guard let title: String = searchBar.text else { return }
+//        print(title)
+//
+//        let databaseRef = Database.database().reference().child("cu")
+//        let query = databaseRef.queryOrdered(byChild: "title").queryStarting(atValue: title).queryEnding(atValue: "\(String(describing: title))\\uf8ff")
+//
+//        query.observeSingleEvent(of: .value) { (snapshot) in
+//            guard snapshot.exists() != false else {
+//                print("failing here")
+//                return }
+//            print(snapshot.value as Any)
+//            DispatchQueue.main.async {
+//
+//                guard let dict = snapshot.value as? [String:Any] else {
+//                    print(snapshot)
+//                    return
+//                }
+//
+//                let title = dict["title"] as? String
+//                let price = dict["price"] as? String
+//            }
+//        }
+//    }
+//}
