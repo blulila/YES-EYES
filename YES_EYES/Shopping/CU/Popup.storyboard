@@ -21,9 +21,9 @@
                                 <rect key="frame" x="87" y="323" width="240" height="250"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdl-Zr-mop">
-                                        <rect key="frame" x="102" y="153" width="37" height="30"/>
+                                        <rect key="frame" x="106" y="153" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="close"/>
+                                        <state key="normal" title="닫기"/>
                                         <connections>
                                             <action selector="close:" destination="jni-hP-GRF" eventType="touchUpInside" id="2Np-b7-3Fx"/>
                                         </connections>

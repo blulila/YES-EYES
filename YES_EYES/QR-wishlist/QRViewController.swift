@@ -16,7 +16,23 @@ class QRCell: UITableViewCell{
 //            rightImageView.image = UIImage.init(systemName: "trash")
 //        }
 //    }
+    
+//    override var accessibilityCustomActions: [UIAccessibilityCustomAction]? {
+//        get {
+//            let moveUp = UIAccessibilityCustomAction(name: "move up", actionHandler: { (action) -> Bool in
+//                print("move up 선택")
+//                return true
+//            })
+//            let moveDown = UIAccessibilityCustomAction(name: "move down", actionHandler: { (action) -> Bool in
+//                print("move down 선택")
+//                return true
+//            })
+//            return [moveUp, moveDown]
+//        }
+//        set {}
+//    }
 }
+
 
 struct QRModel{
     var wishlist = ""
@@ -26,12 +42,6 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     public var qrstr: String = "https://yeseyes.web.app/?"
     
     @IBOutlet weak var ImageView: UIImageView!
-   
-    
-    
-    
-    
-    
 
     func updateCartItem(cell: CartListTableViewCell, quantity: Int) {
         guard let indexPath = QRTableView.indexPath(for: cell) else { return }
@@ -42,10 +52,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     var cart: Cart? = nil
 
-
     var model = [CU1Model]()
-
-
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cart?.items.count ?? 0
@@ -99,6 +106,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         // Display
         self.ImageView.image = UIImage(ciImage: scaledImage)
     }
+    
     func createQRCodeForString(_ text: String) -> CIImage?{
         let data = text.data(using: .utf8)
         
@@ -114,25 +122,21 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
 
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-        if editingStyle == .delete {
-            cart?.updateCart(with: cart!.items[indexPath.row].getItem())
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            qrstr="https://yeseyes.web.app/?";
-            self.QRTableView.reloadData()
-           
-            // "Hello,world!" 가 Qr 로 형성되어있음
-           
-        
-        } else if editingStyle == .insert {
-           
-            self.QRTableView.reloadData()
-       
-            // "Hello,world!" 가 Qr 로 형성되어있음
-          
-        }
-    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//
+//        if editingStyle == .delete {
+//            cart?.updateCart(with: cart!.items[indexPath.row].getItem())
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//            qrstr="https://yeseyes.web.app/?";
+//            self.QRTableView.reloadData()
+//
+//       } else if editingStyle == .insert {
+//
+//            self.QRTableView.reloadData()
+//
+//        }
+//
+//    }
 
 
     var newcart = Cart()
@@ -158,11 +162,21 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         QRTableView.reloadData()
     }
     
+    @IBAction func clickdeletebtn(_ sender: UIButton) {
+        let point = sender.convert(CGPoint.zero, to: QRTableView)
+        guard let indexpath = QRTableView.indexPathForRow(at: point) else { return }
+        cart?.updateCart(with: cart!.items[indexpath.row].getItem())
+        QRTableView.deleteRows(at: [IndexPath(row: indexpath.row, section: 0)], with: .left)
+        qrstr="https://yeseyes.web.app/?";
+        QRTableView.reloadData()
+        refreshQRCode()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         QRTableView.delegate = self
         QRTableView.dataSource = self
-        self.title = "QR·위시리스트"
+        self.title = "QR 및 위시리스트"
         self.navigationController?.navigationBar.prefersLargeTitles = false
         self.QRTableView.reloadData()
         // "Hello,world!" 가 Qr 로 형성되어있음

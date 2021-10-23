@@ -51,7 +51,7 @@ class HelpViewController: UIViewController, UITableViewDelegate, UITableViewData
         helpTableView.delegate = self
         helpTableView.dataSource = self
     
-        title = "HELP"
+        title = "도움말"
         model.append(HelpModel(mainTitle: "메인화면 전환 안내",bottomlabel: "손가락을 이용하여 화면을 넘겨주세요"))
     }
 }

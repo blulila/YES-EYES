@@ -156,7 +156,7 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.cartButton.isEnabled = true
         
         cart.updateCart()
-        self.cartButton.setTitle("Check(\(cart.countItems()))", for: .normal)
+        self.cartButton.setTitle("확인(\(cart.countItems()))", for: .normal)
 //        tableView.reloadData()
     }
     
@@ -275,7 +275,7 @@ extension CU1ViewController: UISearchBarDelegate, CartDelegate{
         
         cart.updateCart(with: item)
         
-        self.cartButton.setTitle("Check(\(cart.items.count))", for: .normal)
+        self.cartButton.setTitle("확인(\(cart.items.count))", for: .normal)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

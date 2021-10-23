@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     func makeData(){
         settingModel.append([
-            SettingModel(mainTitle: "QR·위시리스트")])
+            SettingModel(mainTitle: "QR 및 위시리스트")])
         settingModel.append([
             SettingModel(mainTitle: "상품 쇼핑"),
             SettingModel(mainTitle: "상품 인식"),

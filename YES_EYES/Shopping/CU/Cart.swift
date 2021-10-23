@@ -21,6 +21,7 @@ class Cart {
             Foundation.UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey:"storeItems")
         }
     }
+    
 //        enum CodingKeys: String, CodingKey {
 //            case items
 //        }
@@ -84,4 +85,6 @@ extension Cart {
         let item = items.filter { $0.item == product }
         return item.first != nil
     }
+    
+    
 }
