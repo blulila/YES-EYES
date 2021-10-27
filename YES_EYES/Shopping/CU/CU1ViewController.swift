@@ -79,7 +79,11 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         // section 별 개수 출력
         return model.count
     }
-
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
         as! ItemCell
@@ -125,7 +129,7 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
         self.present(popUp, animated: true, completion: nil)
     }
-
+    
     @IBOutlet weak var CU1SearchBar: UISearchBar!
     @IBOutlet weak var CU1TableView: UITableView!
     
@@ -160,7 +164,6 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 //        tableView.reloadData()
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -174,6 +177,10 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         CU1SearchBar.delegate = self
         
         CU1TableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell") // ItemCell xib 등록
+        
+        CU1TableView.rowHeight  = UITableView.automaticDimension
+        CU1TableView.estimatedRowHeight = 80
+        
         cartButton.layer.cornerRadius = cartButton.frame.height / 2
         cartButton.addTarget(self, action: #selector(didTabCartButton), for: .touchUpInside)
         self.navigationController?.navigationBar.prefersLargeTitles = false
