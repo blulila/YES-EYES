@@ -156,12 +156,13 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        CU1TableView.reloadData()
+        
         self.cartButton.isEnabled = false
         self.cartButton.isEnabled = true
         
         cart.updateCart()
         self.cartButton.setTitle("확인(\(cart.countItems()))", for: .normal)
-//        tableView.reloadData()
     }
     
     override func viewDidLoad() {

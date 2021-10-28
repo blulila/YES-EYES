@@ -8,7 +8,12 @@ import Foundation
 
 class Cart {
     
-    // private(set) var items : [CartItem] = []
+    private(set) var changeitems: [CartItem] = []
+    
+    func changeData(changeitems: [CartItem]) {
+        Foundation.UserDefaults.standard.set(try? PropertyListEncoder().encode(changeitems), forKey:"storeItems")
+    }
+    
     private(set) var items: [CartItem] {
         get {
             var storeItems: [CartItem]?

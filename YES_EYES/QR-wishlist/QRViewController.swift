@@ -46,8 +46,10 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     func updateCartItem(cell: CartListTableViewCell, quantity: Int) {
         guard let indexPath = QRTableView.indexPath(for: cell) else { return }
         guard let cartItem = cart?.items[indexPath.row] else { return }
-        
-        cartItem.quantity = quantity
+        guard let reitems = cart?.items else { return }
+        reitems[indexPath.row].quantity = quantity
+        cart?.changeData(changeitems: reitems)
+        // cartItem.quantity = quantity
     }
     
     var cart: Cart? = nil
@@ -157,7 +159,9 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         if(title != "") {
             cart?.updateCart(with: item)
         }
-                
+        
+        InputField.text = ""
+
         qrstr="https://yeseyes.web.app/?";
         QRTableView.reloadData()
     }
@@ -172,6 +176,14 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         refreshQRCode()
     }
     
+    
+    @IBAction func AllEraseButton(_ sender: Any) {
+        for key in UserDefaults.standard.dictionaryRepresentation().keys {
+                UserDefaults.standard.removeObject(forKey: key.description)
+        }
+        // 키 말고 기존 데이터도 삭제 해야함
+        QRTableView.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         QRTableView.delegate = self
@@ -187,7 +199,4 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         print(qrstr)
    
     }
-    
-
- 
 }
