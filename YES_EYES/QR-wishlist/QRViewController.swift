@@ -50,6 +50,10 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         reitems[indexPath.row].quantity = quantity
         cart?.changeData(changeitems: reitems)
         // cartItem.quantity = quantity
+        
+        qrstr="https://yeseyes.web.app/?";
+        QRTableView.reloadData()
+        
     }
     
     var cart: Cart? = nil
@@ -81,7 +85,15 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             // print(cartItem.item.title)
 //            qrstr.append(cartItem.item.title+cartItem.item.price+"&")
-            qrstr.append(cartItem.item.title+"&")
+        
+            if(indexPath.row==Int(cart?.items.count ?? 0)-1){
+                qrstr.append(cartItem.item.title+"="+String(describing: cartItem.quantity))
+            }
+            else{qrstr.append(cartItem.item.title+"="+String(describing: cartItem.quantity)+"&")
+                
+            }
+            
+            
         }
         print(qrstr)
         self.refreshQRCode()
