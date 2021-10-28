@@ -9,7 +9,7 @@ class AIViewController: UIViewController {
     
     let videoCapture : VideoCapture = VideoCapture()
     let context = CIContext()
-    let model: hangulmodel = try! hangulmodel(configuration: .init())
+    let model: FinalModel = try! FinalModel(configuration: .init())
     
     override func viewDidLoad() {
         super.viewDidLoad()
