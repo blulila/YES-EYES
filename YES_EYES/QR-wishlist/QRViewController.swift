@@ -196,6 +196,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         // 키 말고 기존 데이터도 삭제 해야함
         qrstr="https://yeseyes.web.app/?";
         QRTableView.reloadData()
+        refreshQRCode()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
