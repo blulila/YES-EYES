@@ -70,7 +70,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
         UITableViewCell {
-    
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CartListTableViewCell else { fatalError() }
         
         if let cartItem = cart?.items[indexPath.row]{
@@ -194,6 +194,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
                 UserDefaults.standard.removeObject(forKey: key.description)
         }
         // 키 말고 기존 데이터도 삭제 해야함
+        qrstr="https://yeseyes.web.app/?";
         QRTableView.reloadData()
     }
     override func viewDidLoad() {
