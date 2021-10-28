@@ -41,6 +41,8 @@ struct QRModel{
 class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CartItemDelegate {
     public var qrstr: String = "https://yeseyes.web.app/?"
     
+  
+    
     @IBOutlet weak var ImageView: UIImageView!
 
     func updateCartItem(cell: CartListTableViewCell, quantity: Int) {
@@ -85,8 +87,12 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             // print(cartItem.item.title)
 //            qrstr.append(cartItem.item.title+cartItem.item.price+"&")
-        
+            if(Int(cart?.items.count ?? 0) == 0){
+                qrstr="https://yeseyes.web.app/"}
+            print("몇개잇니")
+           
             if(indexPath.row==Int(cart?.items.count ?? 0)-1){
+             
                 qrstr.append(cartItem.item.title+"="+String(describing: cartItem.quantity))
             }
             else{qrstr.append(cartItem.item.title+"="+String(describing: cartItem.quantity)+"&")
@@ -103,8 +109,10 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
 
     func refreshQRCode() {
  
-        let text:String = qrstr;
-  
+        var text:String = qrstr;
+        if (text == "https://yeseyes.web.app/?")
+        {text = "https://yeseyes.web.app/?위시리스트가"+"="+"비어있습니다." }
+        print(text)
         // Generate the image
         guard let qrCode:CIImage = self.createQRCodeForString(text) else {
             print("Failed to generate QRCode")
@@ -205,7 +213,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.title = "QR 및 위시리스트"
         self.navigationController?.navigationBar.prefersLargeTitles = false
         self.QRTableView.reloadData()
-        // "Hello,world!" 가 Qr 로 형성되어있음
+       
         self.refreshQRCode()
 //        let QRCodeImage = generateQRCode(from:qrstr)
 //        self.QrView.image = QRCodeImage
