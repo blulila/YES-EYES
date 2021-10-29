@@ -11,9 +11,14 @@ class AIViewController: UIViewController {
     let context = CIContext()
     let model: FinalModel = try! FinalModel(configuration: .init())
     
+    @IBOutlet weak var myView: CapturePreviewView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
+        myView.addGestureRecognizer(tapGesture)
+
         self.videoCapture.delegate = self
 
         if self.videoCapture.initCamera(){
@@ -23,7 +28,6 @@ class AIViewController: UIViewController {
             (self.previewView.layer as! AVCaptureVideoPreviewLayer).videoGravity =
                 AVLayerVideoGravity.resizeAspectFill
             
-            self.videoCapture.asyncStartCapturing()
         } else{
             // revise
             myAlert("Camera inaccessable", message: "Application cannot access the camera.")
@@ -36,6 +40,10 @@ class AIViewController: UIViewController {
             alert.addAction(action)
             self.present(alert, animated: true, completion: nil)
         }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        self.videoCapture.asyncStartCapturing()
+    }
 }
 
 // MARK: - VideoCaptureDelegate
