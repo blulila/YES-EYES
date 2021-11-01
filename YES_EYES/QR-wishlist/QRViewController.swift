@@ -213,7 +213,8 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.title = "QR 및 위시리스트"
         self.navigationController?.navigationBar.prefersLargeTitles = false
         self.QRTableView.reloadData()
-       
+        self.hideKeyboard()
+        
         self.refreshQRCode()
 //        let QRCodeImage = generateQRCode(from:qrstr)
 //        self.QrView.image = QRCodeImage
