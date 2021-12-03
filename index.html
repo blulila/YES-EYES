@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> YES_EYES PAGE </title>
+        <meta charset = "utf-8" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, 
+  maximum-scale=1.0, minimum-scale=1.0">
+    </head>
+    <body>
+        <h1> Wish-list </h1>
+        <div id = "list"> </div>
+        <script>
+        
+            var url = window.location.href;
+            var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&'); 
+            // 나누어진 값의 비교를 통해 paramName 으로 요청된 데이터의 값만 return 
+    
+            for (var i = 0; i < parameters.length; i++) { 
+                var varName = parameters[i].split('=')[0];
+                var returnValue = parameters[i].split('=')[1];
+                varName = decodeURI(decodeURIComponent(varName));
+                returnValue = decodeURI(decodeURIComponent(returnValue));
+
+                var ui = document.createElement('ul');
+                var newName = document.createTextNode(varName + "\t");
+                var newValue = document.createTextNode(returnValue);
+                ui.appendChild(newName);
+                ui.appendChild(newValue);
+
+                var curlist = document.getElementById("list");
+                document.body.insertBefore(ui, curlist);
+
+            }
+        </script>
+    </body>
+</html>
