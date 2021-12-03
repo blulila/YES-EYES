@@ -27,17 +27,33 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.prefersLargeTitles = true
+       
     }
-    
+    func initTitle() {
+         // 내비게이션 타이틀 레이블
+         let nTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
+         
+         // 타이틀 속성
+         nTitle.numberOfLines = 2
+         nTitle.textAlignment = .center
+         nTitle.font = UIFont.systemFont(ofSize: 25)
+         nTitle.text = "YES EYES"
+        nTitle.textColor = UIColor.white;
+         
+         self.navigationItem.titleView = nTitle // titleView속성은 뷰 기반으로 타이틀을 사용할 수 있음
+     }
     override func viewDidLoad(){
         super.viewDidLoad()
-        
+     
         settingTableView.delegate = self
         settingTableView.dataSource = self
-        settingTableView.backgroundColor = UIColor(displayP3Red: 228/255, green: 231/255, blue: 246/255, alpha:0)
+        view.backgroundColor = UIColor(red: 101/255, green: 115/255, blue: 177/255, alpha: 1)
         //ViewController -> add Cell
         settingTableView.register(UINib(nibName: "MenuCell", bundle: nil), forCellReuseIdentifier: "MenuCell")
-        title = "YES EYES"
+        
+        settingTableView.backgroundColor = UIColor(red: 101/255, green: 115/255, blue: 177/255, alpha: 1)
+        settingTableView.tintColor = UIColor(red: 101/255, green: 115/255, blue: 177/255, alpha: 1)
+       
         navigationController?.navigationBar.prefersLargeTitles = true
 //        self.view.backgroundColor
         makeData()
@@ -63,6 +79,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
                 QRVC.cart = self.cart
                 self.navigationController?.pushViewController(QRVC, animated: true)
             }
+            
         }
         
         else if indexPath.section == 1 && indexPath.row == 0{
@@ -87,10 +104,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
-        
+        cell.backgroundColor=UIColor(red: 220/255, green: 212/255, blue: 233/255, alpha: 1)
         cell.menuTitle.text = settingModel[indexPath.section][indexPath.row].mainTitle
+        cell.menuTitle.textColor = UIColor(red: 101/255, green: 115/255, blue: 177/255, alpha: 1)
 //        cell.rightImageView.image = UIImage(systemName: settingModel[indexPath.section][indexPath.row].rightImageName ?? "")
-        
+       
         return cell
     }
     

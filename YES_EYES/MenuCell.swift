@@ -13,9 +13,11 @@ class MenuCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         menuTitle.textColor = .black
         menuTitle.font = UIFont(name: "NanumSquareOTFB", size: 30)
-        // Initialization code
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
