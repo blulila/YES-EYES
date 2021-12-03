@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> YES_EYES</title>
+        <meta charset = "utf-8" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, 
+  maximum-scale=1.0, minimum-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Nanum+Myeongjo|Fuzzy+Bubbles&display=swap&subset=korean" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Nanum Gothic', serif;
+                background-color: #e8dcfc;
+            }
+            #container{
+                border-bottom: 5px dotted #4a1673;
+                height: 100%;
+                font-size: 20px;
+                color: #4a1673;
+                padding: 10px;
+            }
+            #item{
+                font-family: 'Fuzzy Bubbles', serif; 
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+            }
+            ul{
+                color:#23025c;
+                font-size: 20px;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0;
+                font-family:'Nanum Gothic';
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <h1 id="item">wishlist</h1>
+            <!-- <div id = "list"> </div> -->
+            <script>
+                var url = window.location.href;
+                var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&'); 
+                // 나누어진 값의 비교를 통해 paramName 으로 요청된 데이터의 값만 return 
+        
+                for (var i = 0; i < parameters.length; i++) {
+                    var varName = parameters[i].split('=')[0];
+                    var returnValue = parameters[i].split('=')[1];
+
+                    varName = decodeURI(decodeURIComponent(varName));
+                    returnValue = decodeURI(decodeURIComponent(returnValue));
+
+                    var ui = document.createElement('ul');
+                    var newName = document.createTextNode(varName + "\t");
+                    var newValue = document.createTextNode(returnValue);
+                    ui.appendChild(newName);
+                    ui.appendChild(newValue);
+
+                    var curlist = document.getElementById("list");
+                    document.body.insertBefore(ui, curlist);
+
+                }
+            </script>
+        </div>
+    </body>
+</html>
