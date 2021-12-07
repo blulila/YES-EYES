@@ -9,7 +9,7 @@ class AIViewController: UIViewController {
     
     let videoCapture : VideoCapture = VideoCapture()
     let context = CIContext()
-    let model: FinalModel = try! FinalModel(configuration: .init())
+    let model: ProductDetection = try! ProductDetection(configuration: .init())
     
     @IBOutlet weak var myView: CapturePreviewView!
     

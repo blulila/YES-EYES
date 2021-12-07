@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D53BAF13728699B5BD81F32 /* Pods_YES_EYESTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82665E99ECE71781567363FE /* Pods_YES_EYESTests.framework */; };
-		5092BBD2272A816C0075A60A /* FinalModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5092BBD1272A816C0075A60A /* FinalModel.mlmodel */; };
+		500B5BFB275F89BF00918070 /* ProductDetection.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 500B5BFA275F89BF00918070 /* ProductDetection.mlmodel */; };
 		73415A8926FDC26C006E1BBB /* CapturePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73415A8626FDC123006E1BBB /* CapturePreviewView.swift */; };
 		73415A8C26FDC278006E1BBB /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73415A8426FDC11F006E1BBB /* VideoCapture.swift */; };
 		73415A8E26FDC2FA006E1BBB /* AIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73415A8326FDC11F006E1BBB /* AIViewController.swift */; };
@@ -223,7 +223,7 @@
 
 /* Begin PBXFileReference section */
 		1B2736BE16154B5A4F3B7039 /* Pods-YES_EYES-YES_EYESUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YES_EYES-YES_EYESUITests.release.xcconfig"; path = "Target Support Files/Pods-YES_EYES-YES_EYESUITests/Pods-YES_EYES-YES_EYESUITests.release.xcconfig"; sourceTree = "<group>"; };
-		5092BBD1272A816C0075A60A /* FinalModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FinalModel.mlmodel; sourceTree = "<group>"; };
+		500B5BFA275F89BF00918070 /* ProductDetection.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ProductDetection.mlmodel; sourceTree = "<group>"; };
 		73415A2F26FD6427006E1BBB /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pods.xcodeproj; sourceTree = "<group>"; };
 		73415A6B26FD6427006E1BBB /* PromisesObjC */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PromisesObjC; sourceTree = "<group>"; };
 		73415A6C26FD6427006E1BBB /* FirebaseCoreDiagnostics */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FirebaseCoreDiagnostics; sourceTree = "<group>"; };
@@ -401,8 +401,8 @@
 				73415A8326FDC11F006E1BBB /* AIViewController.swift */,
 				73415A8626FDC123006E1BBB /* CapturePreviewView.swift */,
 				73415A8726FDC123006E1BBB /* CIImage.swift */,
+				500B5BFA275F89BF00918070 /* ProductDetection.mlmodel */,
 				73415A8426FDC11F006E1BBB /* VideoCapture.swift */,
-				5092BBD1272A816C0075A60A /* FinalModel.mlmodel */,
 			);
 			path = Detection;
 			sourceTree = "<group>";
@@ -982,6 +982,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500B5BFB275F89BF00918070 /* ProductDetection.mlmodel in Sources */,
 				F519FD4726B2F5B700660432 /* CUViewController.swift in Sources */,
 				84FC825F26BD80CB00DF5A01 /* PopupViewController.swift in Sources */,
 				F5E2AF4526BB06D700C9D815 /* CUSaleViewController.swift in Sources */,
@@ -998,7 +999,6 @@
 				73415A8E26FDC2FA006E1BBB /* AIViewController.swift in Sources */,
 				F526784E26AC3FAD005152C4 /* MenuCell.swift in Sources */,
 				73415A8926FDC26C006E1BBB /* CapturePreviewView.swift in Sources */,
-				5092BBD2272A816C0075A60A /* FinalModel.mlmodel in Sources */,
 				F519FD4126B2F49700660432 /* HelpViewController2.swift in Sources */,
 				F526781B26AC3947005152C4 /* SceneDelegate.swift in Sources */,
 				73415A8C26FDC278006E1BBB /* VideoCapture.swift in Sources */,
