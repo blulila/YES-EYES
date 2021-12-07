@@ -9,5 +9,4 @@ import Foundation
 
 struct SettingModel {
     var mainTitle: String = ""
-//    var rightImageView: String?
 }

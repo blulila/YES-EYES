@@ -11,26 +11,7 @@ class QRCell: UITableViewCell{
     
     @IBOutlet weak var wishlistTitle: UILabel!
     @IBOutlet weak var rightImageView: UIImageView!
-//    {
-//        didSet{
-//            rightImageView.image = UIImage.init(systemName: "trash")
-//        }
-//    }
     
-//    override var accessibilityCustomActions: [UIAccessibilityCustomAction]? {
-//        get {
-//            let moveUp = UIAccessibilityCustomAction(name: "move up", actionHandler: { (action) -> Bool in
-//                print("move up 선택")
-//                return true
-//            })
-//            let moveDown = UIAccessibilityCustomAction(name: "move down", actionHandler: { (action) -> Bool in
-//                print("move down 선택")
-//                return true
-//            })
-//            return [moveUp, moveDown]
-//        }
-//        set {}
-//    }
 }
 
 
@@ -85,14 +66,12 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             cell.countLabel.text = String(describing: cartItem.quantity)
             cell.quantity = cartItem.quantity
             
-            // print(cartItem.item.title)
-//            qrstr.append(cartItem.item.title+cartItem.item.price+"&")
             if(Int(cart?.items.count ?? 0) == 0){
-                qrstr="https://yeseyes.web.app/"}
-            print("몇개잇니")
+                qrstr="https://yeseyes-d7690.web.app/"
+                
+            }
            
             if(indexPath.row==Int(cart?.items.count ?? 0)-1){
-             
                 qrstr.append(cartItem.item.title+"="+String(describing: cartItem.quantity))
             }
             else{qrstr.append(cartItem.item.title+"="+String(describing: cartItem.quantity)+"&")
@@ -142,24 +121,6 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
      
         return qrFilter?.outputImage
     }
-
-
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//
-//        if editingStyle == .delete {
-//            cart?.updateCart(with: cart!.items[indexPath.row].getItem())
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//            qrstr="https://yeseyes.web.app/?";
-//            self.QRTableView.reloadData()
-//
-//       } else if editingStyle == .insert {
-//
-//            self.QRTableView.reloadData()
-//
-//        }
-//
-//    }
-
 
     var newcart = Cart()
     
@@ -216,8 +177,6 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.hideKeyboard()
         
         self.refreshQRCode()
-//        let QRCodeImage = generateQRCode(from:qrstr)
-//        self.QrView.image = QRCodeImage
         
         print(qrstr)
    

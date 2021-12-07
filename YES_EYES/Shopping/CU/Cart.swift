@@ -26,20 +26,6 @@ class Cart {
             Foundation.UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey:"storeItems")
         }
     }
-    
-//        enum CodingKeys: String, CodingKey {
-//            case items
-//        }
-//
-//        required init(from decoder: Decoder) throws {
-//            let values = try decoder.container(keyedBy: CodingKeys.self)
-//            items = try values.decode([CartItem].self, forKey: .items)
-//        }
-//        public func encode(to encoder: Encoder) throws {
-//            let container = try encoder.container(keyedBy: CodingKeys.self)
-//            try container.encode(items, forKey: .items)
-//        }
-    
 }
 
 extension Cart {

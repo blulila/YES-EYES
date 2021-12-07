@@ -51,33 +51,6 @@ class StoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self.navigationController?.pushViewController(CUSVC, animated: true)
             }
         }
-        
-//        if indexPath.section == 0 && indexPath.row == 0{
-//            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
-//                CU1VC.text = String(indexPath.row)
-//                self.navigationController?.pushViewController(CU1VC, animated: true)
-//            }
-//        }
-//        if indexPath.section == 0 && indexPath.row == 1{
-//            if let CUSVC = UIStoryboard(name: "CUViewController", bundle: nil).instantiateViewController(identifier: "CUViewController") as? CUSaleViewController{
-//                self.navigationController?.pushViewController(CUSVC, animated: true)
-//            }
-//        }
-//        if indexPath.section == 0 && indexPath.row == 2{
-//            if let CUSVC = UIStoryboard(name: "CUViewController", bundle: nil).instantiateViewController(identifier: "CUViewController") as? CUSaleViewController{
-//                self.navigationController?.pushViewController(CUSVC, animated: true)
-//            }
-//        }
-//        if indexPath.section == 0 && indexPath.row == 3{
-//            if let CUSVC = UIStoryboard(name: "CUViewController", bundle: nil).instantiateViewController(identifier: "CUViewController") as? CUSaleViewController{
-//                self.navigationController?.pushViewController(CUSVC, animated: true)
-//            }
-//        }
-//        if indexPath.section == 0 && indexPath.row == 4{
-//            if let CUSVC = UIStoryboard(name: "CUViewController", bundle: nil).instantiateViewController(identifier: "CUViewController") as? CUSaleViewController{
-//                self.navigationController?.pushViewController(CUSVC, animated: true)
-//            }
-//        }
     }
     
     //1. view class connection

@@ -27,41 +27,6 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     var text: String = ""
     var product:Dictionary<String, String> = [String: String]()
     
-//    var term = ""
-    //Popup
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let vc = segue.destination as! CU1ViewController
-//        let cell = sender as! UITableViewCell
-//        let indexPath = tableView.indexPath(for: cell)
-//        vc.kindTitle = infoList[(indexPath?.row)!]//내가누른 cell의 text
-//        vc.kindRow = (indexPath?.row)!//내가누른 cell의 row값
-//    }
-//
-//    @IBAction func pop(_ sender: Any, for segue: UIStoryboardSegue) {
-//
-//        let storyboard = UIStoryboard.init(name: "Popup", bundle: nil)
-//        let popUp = storyboard.instantiateViewController(identifier: "Popup")
-//
-//        popUp.modalPresentationStyle = .overCurrentContext
-//        popUp.modalTransitionStyle = .crossDissolve
-//
-//        var index: Int = 0
-//        self.delegate?.pop(index: index)
-//
-//        let temp = popUp as? PopupViewController
-//
-//        let vc = segue.destination as! CU1ViewController
-//        let cell = sender as! ItemCell
-//        let indexPath = tableView.indexPath(for: cell)
-//        vc.kindTitle = infoList[(indexPath?.row)!]//내가누른 cell의 text
-//
-//        temp?.strText = "123"
-//
-//        self.present(popUp, animated: true,
-//            completion: nil)
-//    }
-//
     var model = [CU1Model]()
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -238,45 +203,9 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         
     }
-        // 추후 함수 분리할 수 있으니 하단 주석은 남겨 둡니다.
-
-    }
-
-
-    
-    
-//func getData() {
-//
-//    var model = [[CU1Model]]()
-//    let ref: DatabaseReference! = Database.database().reference()
-//    var handle: DatabaseHandle!
-//
-//    handle = ref.child("cu").child("instant").observeSingleEvent(of: .value, with: { (snapshot) in
-//        for child in snapshot.children {
-//            let snap = child as! DataSnapshot
-//
-//            let item = snap.value as! [String: Any]
-//
-//            let title = item["title"] ?? ""
-//            let price = item["price"] ?? ""
-//            let info = item["info"] ?? ""
-//
-//            self.model.append([CU1Model(title: title as! String, price: price as! String, info: info as! String)])
-//        }
-//        // print(model)
-//    })
-
-/*
-for i in range() {
-    model.append([CU1Model(title: "상품이름", price: "상품가격")])
-    // 데이터를 받아와서 이 형식으로 반복문 생성하면 에뮬레이터 화면에 상품명과 상품가격이 뜸
- }
-*/
-
-//}
+}
 
 extension CU1ViewController: UISearchBarDelegate, CartDelegate{
-
     func updateCart(cell: ItemCell) {
         guard let indexPath = CU1TableView.indexPath(for: cell) else { return }
         let item = model[indexPath.row]
@@ -291,26 +220,6 @@ extension CU1ViewController: UISearchBarDelegate, CartDelegate{
         guard let title: String = searchBar.text else { return }
         print(title)
         filterContentForSearchText(title)
-        
-//        let databaseRef = Database.database().reference().child("cu")
-//        let query = databaseRef.queryOrdered(byChild: "title").queryStarting(atValue: title).queryEnding(atValue: "\(String(describing: title))\\uf8ff")
-//
-//        query.observeSingleEvent(of: .value) { (snapshot) in
-//            guard snapshot.exists() != false else {
-//                print("failing here")
-//                return }
-//            print(snapshot.value as Any)
-//            DispatchQueue.main.async {
-//
-//                guard let dict = snapshot.value as? [String:Any] else {
-//                    print(snapshot)
-//                    return
-//                }
-//
-//                let title = dict["title"] as? String
-//                let price = dict["price"] as? String
-//            }
-//        }
     }
 }
 
