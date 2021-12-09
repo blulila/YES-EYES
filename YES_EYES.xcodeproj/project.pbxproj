@@ -35,17 +35,9 @@
 		84A530DA26B16EA00002B7F1 /* HelpViewController3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A530D926B16EA00002B7F1 /* HelpViewController3.storyboard */; };
 		84B85D1B26D1411C00B18B6D /* CartListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B85D1A26D1411C00B18B6D /* CartListTableViewCell.swift */; };
 		84E87616275A2F7B0032CFAC /* logo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E87615275A2F7B0032CFAC /* logo3.png */; };
-		84E8761B275A2F810032CFAC /* YES-EYES in Resources */ = {isa = PBXBuildFile; fileRef = 84E8761A275A2F810032CFAC /* YES-EYES */; };
-		84E87625275A30840032CFAC /* YES-EYES in Resources */ = {isa = PBXBuildFile; fileRef = 84E87624275A30840032CFAC /* YES-EYES */; };
-		84E8762F275A3D8C0032CFAC /* YES-EYES in Resources */ = {isa = PBXBuildFile; fileRef = 84E8762E275A3D8C0032CFAC /* YES-EYES */; };
 		84E87634275A3F9F0032CFAC /* logo6.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E87633275A3F9F0032CFAC /* logo6.png */; };
-		84E87639275A3FA60032CFAC /* YES-EYES in Resources */ = {isa = PBXBuildFile; fileRef = 84E87638275A3FA50032CFAC /* YES-EYES */; };
-		84E8763F275A40CA0032CFAC /* YES-EYES in Resources */ = {isa = PBXBuildFile; fileRef = 84E8763E275A40CA0032CFAC /* YES-EYES */; };
 		84E87644275A41080032CFAC /* logo7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E87643275A41080032CFAC /* logo7.png */; };
-		84E8765E275A410D0032CFAC /* YES-EYES in Resources */ = {isa = PBXBuildFile; fileRef = 84E8765D275A410D0032CFAC /* YES-EYES */; };
 		84E8766C275A42960032CFAC /* logo8.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E8766B275A42960032CFAC /* logo8.png */; };
-		84E87671275A429C0032CFAC /* YES-EYES in Resources */ = {isa = PBXBuildFile; fileRef = 84E87670275A429C0032CFAC /* YES-EYES */; };
-		84E87676275A42B50032CFAC /* YES-EYES in Resources */ = {isa = PBXBuildFile; fileRef = 84E87675275A42B40032CFAC /* YES-EYES */; };
 		84FC823D26BD7AD400DF5A01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84FC823C26BD7AD400DF5A01 /* GoogleService-Info.plist */; };
 		84FC824D26BD7E6C00DF5A01 /* Popup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FC824C26BD7E6C00DF5A01 /* Popup.storyboard */; };
 		84FC825F26BD80CB00DF5A01 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC825E26BD80CB00DF5A01 /* PopupViewController.swift */; };
@@ -270,18 +262,10 @@
 		84A530D926B16EA00002B7F1 /* HelpViewController3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpViewController3.storyboard; sourceTree = "<group>"; };
 		84B85D1A26D1411C00B18B6D /* CartListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListTableViewCell.swift; sourceTree = "<group>"; };
 		84E87615275A2F7B0032CFAC /* logo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo3.png; sourceTree = "<group>"; };
-		84E8761A275A2F810032CFAC /* YES-EYES */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "YES-EYES"; sourceTree = "<group>"; };
-		84E87624275A30840032CFAC /* YES-EYES */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "YES-EYES"; sourceTree = "<group>"; };
 		84E87629275A3D840032CFAC /* logo5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo5.png; sourceTree = "<group>"; };
-		84E8762E275A3D8C0032CFAC /* YES-EYES */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "YES-EYES"; sourceTree = "<group>"; };
 		84E87633275A3F9F0032CFAC /* logo6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo6.png; sourceTree = "<group>"; };
-		84E87638275A3FA50032CFAC /* YES-EYES */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "YES-EYES"; sourceTree = "<group>"; };
-		84E8763E275A40CA0032CFAC /* YES-EYES */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "YES-EYES"; sourceTree = "<group>"; };
 		84E87643275A41080032CFAC /* logo7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo7.png; sourceTree = "<group>"; };
-		84E8765D275A410D0032CFAC /* YES-EYES */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "YES-EYES"; sourceTree = "<group>"; };
 		84E8766B275A42960032CFAC /* logo8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo8.png; sourceTree = "<group>"; };
-		84E87670275A429C0032CFAC /* YES-EYES */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "YES-EYES"; sourceTree = "<group>"; };
-		84E87675275A42B40032CFAC /* YES-EYES */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "YES-EYES"; sourceTree = "<group>"; };
 		84FC823C26BD7AD400DF5A01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84FC824C26BD7E6C00DF5A01 /* Popup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Popup.storyboard; sourceTree = "<group>"; };
 		84FC825E26BD80CB00DF5A01 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
@@ -502,17 +486,9 @@
 			children = (
 				84E87643275A41080032CFAC /* logo7.png */,
 				84E8766B275A42960032CFAC /* logo8.png */,
-				84E8765D275A410D0032CFAC /* YES-EYES */,
-				84E87670275A429C0032CFAC /* YES-EYES */,
-				84E87675275A42B40032CFAC /* YES-EYES */,
 				84E87629275A3D840032CFAC /* logo5.png */,
-				84E8763E275A40CA0032CFAC /* YES-EYES */,
 				84E87633275A3F9F0032CFAC /* logo6.png */,
-				84E8762E275A3D8C0032CFAC /* YES-EYES */,
-				84E87638275A3FA50032CFAC /* YES-EYES */,
 				84E87615275A2F7B0032CFAC /* logo3.png */,
-				84E8761A275A2F810032CFAC /* YES-EYES */,
-				84E87624275A30840032CFAC /* YES-EYES */,
 				F526781726AC3947005152C4 /* YES_EYES */,
 				F526782E26AC3949005152C4 /* YES_EYESTests */,
 				F526783926AC3949005152C4 /* YES_EYESUITests */,
@@ -819,20 +795,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84E8762F275A3D8C0032CFAC /* YES-EYES in Resources */,
 				F526782526AC3949005152C4 /* LaunchScreen.storyboard in Resources */,
 				F5E2AF4A26BB0F7E00C9D815 /* CUSearchViewController.storyboard in Resources */,
-				84E87625275A30840032CFAC /* YES-EYES in Resources */,
 				84E87644275A41080032CFAC /* logo7.png in Resources */,
 				84E87616275A2F7B0032CFAC /* logo3.png in Resources */,
-				84E8761B275A2F810032CFAC /* YES-EYES in Resources */,
 				F505379A26AD93750012085F /* QRViewController.storyboard in Resources */,
 				F5E2AF4826BB077A00C9D815 /* CUSaleViewController.storyboard in Resources */,
 				8473A8AC26B02EB6008B16E7 /* HelpViewController.storyboard in Resources */,
 				73B9EB7626BAAC1200333C60 /* InfoCellViewController.xib in Resources */,
 				739D9CEE26B7EEEA0076D382 /* ItemCell.xib in Resources */,
-				84E87671275A429C0032CFAC /* YES-EYES in Resources */,
-				84E8763F275A40CA0032CFAC /* YES-EYES in Resources */,
 				F526782226AC3949005152C4 /* Assets.xcassets in Resources */,
 				F5B6687C26AF2DF4008AE203 /* StoreViewController.storyboard in Resources */,
 				84E87634275A3F9F0032CFAC /* logo6.png in Resources */,
@@ -842,14 +813,11 @@
 				84E8766C275A42960032CFAC /* logo8.png in Resources */,
 				84FC823D26BD7AD400DF5A01 /* GoogleService-Info.plist in Resources */,
 				F519FD4526B2F58300660432 /* CUViewController.storyboard in Resources */,
-				84E87639275A3FA60032CFAC /* YES-EYES in Resources */,
 				F526784F26AC3FAD005152C4 /* MenuCell.xib in Resources */,
 				84A530DA26B16EA00002B7F1 /* HelpViewController3.storyboard in Resources */,
 				73415A8F26FDC2FE006E1BBB /* AIViewController.storyboard in Resources */,
 				8474CC20272433DA003D9277 /* NanumSquareB.otf in Resources */,
-				84E87676275A42B50032CFAC /* YES-EYES in Resources */,
 				F526782026AC3947005152C4 /* Main.storyboard in Resources */,
-				84E8765E275A410D0032CFAC /* YES-EYES in Resources */,
 				F51B8CB426B310D6005A13CF /* CU1ViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
