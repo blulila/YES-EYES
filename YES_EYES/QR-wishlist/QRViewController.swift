@@ -20,7 +20,7 @@ struct QRModel{
 }
 
 class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CartItemDelegate {
-    public var qrstr: String = "https://yeseyes.web.app/?"
+    public var qrstr: String = "https://yes-eyes-d7690.web.app/?";
     
   
     
@@ -34,7 +34,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         cart?.changeData(changeitems: reitems)
         // cartItem.quantity = quantity
         
-        qrstr="https://yeseyes.web.app/?";
+        qrstr="https://yes-eyes-d7690.web.app/?";
         QRTableView.reloadData()
         
     }
@@ -67,7 +67,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             cell.quantity = cartItem.quantity
             
             if(Int(cart?.items.count ?? 0) == 0){
-                qrstr="https://yeseyes-d7690.web.app/"
+                qrstr="https://yes-eyes-d7690.web.app/?"
                 
             }
            
@@ -89,8 +89,8 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     func refreshQRCode() {
  
         var text:String = qrstr;
-        if (text == "https://yeseyes.web.app/?")
-        {text = "https://yeseyes.web.app/?위시리스트가"+"="+"비어있습니다." }
+        if (text == "https://yes-eyes-d7690.web.app/?")
+        {text = "https://yes-eyes-d7690.web.app/?위시리스트가"+"="+"비어있습니다." }
         print(text)
         // Generate the image
         guard let qrCode:CIImage = self.createQRCodeForString(text) else {
@@ -143,7 +143,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         InputField.text = ""
 
-        qrstr="https://yeseyes.web.app/?";
+        qrstr="https://yes-eyes-d7690.web.app/?";
         QRTableView.reloadData()
     }
     
@@ -152,7 +152,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         guard let indexpath = QRTableView.indexPathForRow(at: point) else { return }
         cart?.updateCart(with: cart!.items[indexpath.row].getItem())
         QRTableView.deleteRows(at: [IndexPath(row: indexpath.row, section: 0)], with: .left)
-        qrstr="https://yeseyes.web.app/?";
+        qrstr="https://yes-eyes-d7690.web.app/?";
         QRTableView.reloadData()
         refreshQRCode()
     }
@@ -163,7 +163,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
                 UserDefaults.standard.removeObject(forKey: key.description)
         }
         // 키 말고 기존 데이터도 삭제 해야함
-        qrstr="https://yeseyes.web.app/?";
+        qrstr="https://yes-eyes-d7690.web.app/?";
         QRTableView.reloadData()
         refreshQRCode()
     }
